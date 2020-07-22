@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Fish Fries Counter</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Captured Image
+    </ion-card-header>
+    <ion-card-content>
+      <img id="image_captured" width="100%" height="300" style="border:1px solid #d3d3d3; pointer-events: none;" [src]="image_captured || 'assets/imgs/image-placeholder.jpg'"
+        crossOrigin="Anonymous">
+    </ion-card-content>
+  </ion-card>
+  <ion-card [ngStyle]="{'display': !image_captured ? 'none' : ''}">
+    <ion-card-header>
+      Results: {{count ? count : 0}} Fish Fries.
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row style="text-align: center">
+      <ion-col col-6>
+        <button (click)="browseFiles()" ion-button round>Browse</button>
+      </ion-col>
+      <ion-col col-6>
+        <button (click)="capture()" ion-button round>Capture</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

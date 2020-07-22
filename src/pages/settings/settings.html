@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Distance: {{settings.distance}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range min="1" max="20" step="1" snaps="true" color="secondary" [(ngModel)]="settings.distance" (ngModelChange)="store($event)"></ion-range>
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-card>
+    <ion-card-header>
+      Accuracy: {{settings.accuracy}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range min="1" max="2" step="1" snaps="true" color="secondary" [(ngModel)]="settings.accuracy" (ngModelChange)="store($event)"></ion-range>
+    </ion-card-content>
+  </ion-card> -->
+  <ion-card>
+    <ion-card-header>
+      Tolerance: {{settings.tolerance}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range min="1" max="100" step="1" snaps="true" color="secondary" [(ngModel)]="settings.tolerance" (ngModelChange)="store($event)"></ion-range>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Noise Reduction: {{settings.clearNoise}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range min="0" max="100" step="1" snaps="true" color="secondary" [(ngModel)]="settings.clearNoise" (ngModelChange)="store($event)"></ion-range>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row style="text-align: center">
+      <ion-col col-4>
+      </ion-col>
+      <ion-col col-4>
+        <button (click)="clearDefaults()" ion-button round>Clear Defaults</button>
+      </ion-col>
+      <ion-col col-4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
